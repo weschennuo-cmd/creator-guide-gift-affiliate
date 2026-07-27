@@ -1,17 +1,10 @@
-POCOCO Creator Partnership Guide - HTML Package
+POCOCO Gifted Product & Affiliate Creator Partnership Guide — V2 Preview
 
-How to preview:
-1. Unzip the package.
-2. Double-click index.html to open it in a browser.
-3. Keep all image files in the same folder as index.html.
+Open index.html in any modern desktop or mobile browser.
 
-How to edit:
-- Main page content and styles are in index.html.
-- Images used by the page are stored in this same folder.
-- External creator guide links and the Product User Guide link are inside index.html as href values.
+This version follows the approved Paid Guide visual system while using:
+- An 8-step gifted collaboration and affiliate workflow
+- Gift-specific publishing and live-link requirements
+- Affiliate link, creator discount code, and commission guidance
 
-Latest design direction:
-- Apple-inspired: cinematic, simple, high-end product storytelling.
-- Nikki-inspired: stronger creator pitch structure, bigger claims, clearer matching cards, obvious key points.
-- Workflow is designed as a process diagram, with key creator action steps highlighted.
-- Filming and Content Guidelines use broad creator-friendly language.
+The seven linked creator-type guides are unchanged in this delivery and will be revised separately.

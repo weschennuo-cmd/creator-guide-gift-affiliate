@@ -3,47 +3,44 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>POCOCO Creator Partnership Guide</title>
+  <meta name="theme-color" content="#050817">
+  <title>POCOCO Gifted Product &amp; Affiliate Creator Partnership Guide</title>
   <style>
     :root {
-      --deep: #030713;
-      --midnight: #07173a;
-      --ink: #07123a;
-      --muted: #667093;
+      --ink: #08133b;
+      --muted: #5d6683;
+      --deep: #050817;
+      --night: #091532;
+      --paper: #f7f8ff;
       --white: #ffffff;
-      --soft: #f5f7ff;
-      --line: rgba(126, 144, 220, .22);
-      --blue: #7fa0ff;
-      --violet: #7b61ff;
-      --cyan: #5dd7ff;
+      --violet: #6e59ef;
+      --violet-dark: #4d3bd3;
+      --blue: #87a4ff;
       --gold: #ffd66b;
-      --green: #9ee7c8;
-      --shadow: 0 26px 80px rgba(5, 12, 42, .2);
-      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", Inter, "Segoe UI", Arial, sans-serif;
+      --green: #9be3c3;
+      --line: rgba(88, 104, 178, .2);
+      --shadow: 0 24px 68px rgba(12, 24, 72, .14);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Arial, sans-serif;
     }
 
     * { box-sizing: border-box; }
-
-    html {
-      scroll-behavior: smooth;
-      background: var(--deep);
-    }
-
+    html { scroll-behavior: smooth; background: var(--deep); }
     body {
       margin: 0;
-      color: var(--white);
+      color: var(--ink);
       background: var(--deep);
+      font-size: 16px;
       line-height: 1.55;
-      letter-spacing: 0;
-      overflow-x: hidden;
+      overflow-x: clip;
     }
 
-    img { max-width: 100%; display: block; }
+    img { display: block; max-width: 100%; }
     a { color: inherit; }
     h1, h2, h3, h4, p { margin-top: 0; }
+    section { scroll-margin-top: 84px; }
 
     .shell {
-      width: min(1520px, calc(100% - 40px));
+      width: min(1240px, calc(100% - 40px));
       margin: 0 auto;
     }
 
@@ -51,901 +48,760 @@
       position: sticky;
       top: 0;
       z-index: 50;
-      border-bottom: 1px solid rgba(255,255,255,.09);
-      background: rgba(3, 7, 19, .76);
+      border-bottom: 1px solid rgba(255,255,255,.1);
+      background: rgba(5, 8, 23, .88);
       backdrop-filter: blur(18px);
     }
 
     .nav {
-      min-height: 70px;
-      display: flex;
+      min-height: 68px;
+      display: grid;
+      grid-template-columns: auto minmax(0, 1fr);
       align-items: center;
-      justify-content: space-between;
-      gap: 24px;
+      gap: 28px;
     }
 
-    .brand img {
-      width: 128px;
-      height: auto;
-    }
+    .brand img { width: 112px; }
 
     .navlinks {
       display: flex;
-      flex-wrap: wrap;
       justify-content: flex-end;
-      gap: 8px;
+      gap: 6px;
+      overflow-x: auto;
+      scrollbar-width: none;
     }
 
+    .navlinks::-webkit-scrollbar { display: none; }
+
     .navlinks a {
-      padding: 8px 11px;
+      flex: 0 0 auto;
+      padding: 8px 10px;
       border-radius: 999px;
-      color: rgba(255,255,255,.78);
+      color: rgba(255,255,255,.72);
       font-size: 13px;
-      font-weight: 700;
+      font-weight: 750;
       text-decoration: none;
     }
 
-    .navlinks a:hover {
+    .navlinks a:hover,
+    .navlinks a:focus-visible {
       color: #fff;
-      background: rgba(255,255,255,.08);
+      background: rgba(255,255,255,.1);
+      outline: none;
     }
 
     .hero {
-      min-height: calc(100vh - 70px);
-      position: relative;
+      min-height: 760px;
       display: grid;
-      align-items: end;
-      overflow: hidden;
+      align-items: center;
+      color: #fff;
       background:
-        linear-gradient(90deg, rgba(3,7,19,.98) 0%, rgba(3,7,19,.72) 42%, rgba(3,7,19,.12) 82%),
-        url("scene-blackhole.jpg") center / cover no-repeat;
+        linear-gradient(90deg, rgba(3,7,20,.98) 0%, rgba(3,7,20,.78) 48%, rgba(3,7,20,.2) 100%),
+        url("scene-blackhole-optimized.webp") center / cover no-repeat;
     }
 
-    .hero::after,
-    .night::after,
-    .closing::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      pointer-events: none;
-      background-image:
-        radial-gradient(circle, rgba(255,255,255,.88) 0 1px, transparent 1.5px),
-        radial-gradient(circle, rgba(124,157,255,.8) 0 1px, transparent 1.6px);
-      background-size: 96px 96px, 151px 151px;
-      background-position: 18px 22px, 61px 13px;
-      opacity: .2;
-      mask-image: linear-gradient(180deg, #000 0%, transparent 85%);
-    }
+    .hero-inner { padding: 96px 0 84px; }
 
-    .hero-inner {
-      position: relative;
-      z-index: 2;
-      padding: 92px 0 56px;
-    }
-
-    .kicker {
+    .eyebrow {
       display: inline-flex;
       align-items: center;
-      gap: 18px;
-      margin-bottom: 28px;
+      gap: 10px;
+      margin-bottom: 24px;
       color: var(--gold);
-      font-size: clamp(24px, 3vw, 46px);
-      line-height: 1.05;
-      font-weight: 950;
+      font-size: 14px;
+      font-weight: 900;
+      letter-spacing: .12em;
       text-transform: uppercase;
-      letter-spacing: .08em;
-      text-shadow: 0 0 28px rgba(255,214,107,.26);
     }
 
-    .kicker::before {
+    .eyebrow::before {
       content: "";
-      width: 86px;
-      height: 3px;
+      width: 48px;
+      height: 2px;
       border-radius: 999px;
-      background: linear-gradient(90deg, var(--violet), var(--gold), transparent);
-      box-shadow: 0 0 22px rgba(123,97,255,.8);
+      background: linear-gradient(90deg, var(--violet), var(--gold));
     }
 
     h1 {
-      max-width: 980px;
-      margin-bottom: 28px;
-      font-size: clamp(64px, 10vw, 142px);
-      line-height: .9;
-      letter-spacing: 0;
-      color: #fff;
-      text-shadow: 0 18px 70px rgba(92, 130, 255, .28);
+      max-width: 900px;
+      margin-bottom: 26px;
+      font-size: clamp(54px, 8vw, 110px);
+      line-height: .94;
+      letter-spacing: -.045em;
     }
 
     .hero-lead {
-      max-width: 660px;
-      color: rgba(255,255,255,.9);
-      font-size: clamp(18px, 2vw, 24px);
+      max-width: 700px;
+      margin-bottom: 0;
+      color: rgba(255,255,255,.86);
+      font-size: clamp(18px, 2vw, 23px);
       font-weight: 650;
     }
 
-    .hero-lead strong {
-      color: #96aaff;
-      font-weight: 900;
-    }
+    .hero-lead strong { color: #b6c5ff; }
 
-    .hero-actions {
+    .actions {
       display: flex;
       flex-wrap: wrap;
       gap: 12px;
-      margin-top: 34px;
+      margin-top: 32px;
     }
 
     .button {
+      min-height: 48px;
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      min-height: 48px;
       padding: 0 20px;
+      border: 1px solid rgba(255,255,255,.2);
       border-radius: 999px;
-      border: 1px solid rgba(255,255,255,.18);
       color: #fff;
-      background: rgba(255,255,255,.1);
+      background: rgba(255,255,255,.09);
+      font-weight: 850;
       text-decoration: none;
-      font-weight: 900;
-      transition: transform .18s ease, background .18s ease, box-shadow .18s ease;
     }
 
     .button.primary {
       border-color: transparent;
-      color: #07123a;
+      color: var(--ink);
       background: #fff;
-      box-shadow: 0 18px 42px rgba(130, 154, 255, .24);
+      box-shadow: 0 16px 40px rgba(76, 94, 190, .24);
     }
 
-    .button:hover {
-      transform: translateY(-2px);
-      background: rgba(255,255,255,.18);
-    }
+    .button:hover { transform: translateY(-1px); }
+    .button:focus-visible { outline: 3px solid var(--gold); outline-offset: 3px; }
 
-    .button.primary:hover { background: #eef2ff; }
-
-    .panel .button.primary {
-      color: #fff;
-      background: #07123a;
-      box-shadow: 0 16px 34px rgba(7,18,58,.18);
-    }
-
-    .panel .button.primary:hover {
-      background: #172463;
-    }
-
-    .hero-strip {
-      position: relative;
-      z-index: 3;
-      border-top: 1px solid rgba(255,255,255,.12);
-      background: rgba(2, 8, 24, .82);
-      backdrop-filter: blur(18px);
-    }
-
-    .overview-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-    }
-
-    .overview-card {
-      min-height: 166px;
-      padding: 30px 26px;
-      border-right: 1px solid rgba(255,255,255,.12);
-    }
-
-    .overview-card:last-child { border-right: 0; }
-
-    .num {
-      display: block;
-      margin-bottom: 12px;
-      color: var(--gold);
-      font-size: 30px;
-      line-height: 1;
-      font-weight: 950;
-    }
-
-    .overview-card h3 {
-      margin-bottom: 8px;
-      color: #aebcff;
-      font-size: 18px;
-      line-height: 1.2;
-    }
-
-    .overview-card p {
-      margin: 0;
-      color: rgba(255,255,255,.78);
-      font-size: 14px;
-      font-weight: 650;
-    }
-
-    section {
-      position: relative;
-      overflow: hidden;
-    }
-
-    .section-pad { padding: 112px 0; }
-
+    .section-pad { padding: 92px 0; }
     .light {
       color: var(--ink);
       background:
-        radial-gradient(circle at 15% 18%, rgba(123,97,255,.16), transparent 32rem),
-        radial-gradient(circle at 84% 4%, rgba(93,215,255,.12), transparent 32rem),
-        linear-gradient(180deg, #fbfcff, #edf2ff);
+        radial-gradient(circle at 10% 8%, rgba(110,89,239,.1), transparent 28rem),
+        linear-gradient(180deg, #fbfcff, #f0f3ff);
     }
 
-    .night {
+    .white { background: #fff; }
+
+    .dark {
       color: #fff;
       background:
-        radial-gradient(circle at 78% 12%, rgba(120, 154, 255, .2), transparent 34rem),
-        linear-gradient(180deg, #07142f, #020713);
+        radial-gradient(circle at 86% 4%, rgba(124,153,255,.18), transparent 30rem),
+        linear-gradient(180deg, #0b1837, #040817);
     }
 
     .section-head {
-      max-width: 1240px;
-      margin-bottom: 54px;
+      max-width: 900px;
+      margin-bottom: 42px;
     }
 
     .section-head.center {
-      margin-left: auto;
       margin-right: auto;
+      margin-left: auto;
       text-align: center;
     }
 
     .label {
-      margin-bottom: 18px;
-      color: var(--violet);
-      font-size: clamp(18px, 1.6vw, 25px);
-      font-weight: 950;
-      letter-spacing: .1em;
-      text-transform: uppercase;
-    }
-
-    .night .label { color: #aebcff; }
-
-    .section-title {
-      margin-bottom: 20px;
-      color: inherit;
-      font-size: clamp(56px, 7.2vw, 108px);
-      line-height: .96;
-      letter-spacing: 0;
-    }
-
-    .accent {
-      color: var(--violet);
-    }
-
-    .night .accent {
-      color: #9dafef;
-    }
-
-    .lead {
-      max-width: 1080px;
-      color: rgba(7,18,58,.78);
-      font-size: clamp(20px, 2vw, 26px);
-      font-weight: 700;
-    }
-
-    .night .lead {
-      max-width: 1080px;
-      color: rgba(244,247,255,.9);
-      font-size: clamp(20px, 2vw, 26px);
-      font-weight: 700;
-      text-shadow: 0 10px 30px rgba(0,0,0,.24);
-    }
-
-    .metrics {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 14px;
-      margin-top: 36px;
-    }
-
-    .metric {
-      padding: 22px;
-      border: 1px solid var(--line);
-      border-radius: 22px;
-      background: rgba(255,255,255,.74);
-      box-shadow: 0 16px 42px rgba(45, 58, 126, .1);
-    }
-
-    .metric strong {
-      display: block;
-      margin-bottom: 6px;
-      color: #2d26d9;
-      font-size: 30px;
-      line-height: 1;
-      font-weight: 950;
-    }
-
-    .metric span {
-      color: #465174;
+      margin-bottom: 14px;
+      color: var(--violet-dark);
       font-size: 14px;
-      font-weight: 800;
-    }
-
-    .timeline {
-      display: grid;
-      grid-template-columns: repeat(8, minmax(118px, 1fr));
-      gap: 12px;
-      align-items: stretch;
-      position: relative;
-    }
-
-    .step {
-      min-height: 260px;
-      padding: 22px 18px;
-      position: relative;
-      border: 1px solid var(--line);
-      border-radius: 24px;
-      background: rgba(255,255,255,.86);
-      box-shadow: 0 16px 42px rgba(45, 58, 126, .09);
-    }
-
-    .timeline .step:not(:last-child)::after {
-      content: "";
-      position: absolute;
-      top: 48px;
-      right: -13px;
-      width: 14px;
-      height: 2px;
-      background: #7b61ff;
-      box-shadow: 0 0 0 4px rgba(123,97,255,.08);
-      z-index: 3;
-    }
-
-    .step.priority {
-      border-color: rgba(255,214,107,.72);
-      box-shadow: 0 26px 72px rgba(123,97,255,.18), inset 0 0 0 2px rgba(255,214,107,.38);
-    }
-
-    .step small {
-      display: inline-grid;
-      place-items: center;
-      width: 42px;
-      height: 42px;
-      margin-bottom: 22px;
-      border-radius: 50%;
-      color: #fff;
-      background: #07123a;
-      font-size: 14px;
-      font-weight: 950;
-      letter-spacing: .04em;
-    }
-
-    .step h3 {
-      margin-bottom: 12px;
-      color: #081a58;
-      font-size: clamp(22px, 1.7vw, 30px);
-      line-height: 1.04;
-    }
-
-    .step p {
-      margin: 0;
-      color: #465174;
-      font-size: 15px;
-      font-weight: 650;
-    }
-
-    .step.highlight {
-      color: #fff;
-      background: linear-gradient(145deg, #111f57, #4b33dc);
-      box-shadow: 0 24px 70px rgba(75, 51, 220, .26);
-    }
-
-    .step.highlight small,
-    .step.highlight h3,
-    .step.highlight p {
-      color: #fff;
-    }
-
-    .mark {
-      color: #ffe681;
-      font-weight: 950;
-    }
-
-    .note-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 18px;
-      margin-top: 18px;
-    }
-
-    .note {
-      padding: 30px;
-      border-radius: 26px;
-      color: #fff;
-      background: linear-gradient(145deg, #111f57, #2f61b8);
-      box-shadow: 0 24px 70px rgba(17,31,87,.18);
-    }
-
-    .note h3 {
-      margin-bottom: 10px;
-      font-size: 24px;
-    }
-
-    .note p {
-      margin-bottom: 0;
-      color: rgba(255,255,255,.86);
-      font-weight: 650;
-    }
-
-    .about-layout {
-      display: grid;
-      grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr);
-      gap: 56px;
-      align-items: center;
-    }
-
-    .brand-line {
-      margin: 24px 0;
-      color: #a9b8ff;
-      font-size: clamp(28px, 4vw, 48px);
-      line-height: 1.08;
-      font-weight: 950;
-    }
-
-    .product-cinema {
-      min-height: 540px;
-      border-radius: 28px;
-      overflow: hidden;
-      background:
-        linear-gradient(180deg, rgba(0,0,0,.08), rgba(0,0,0,.2)),
-        #020306 url("product-lineup.png") center 58% / 132% auto no-repeat;
-      box-shadow: 0 40px 100px rgba(0,0,0,.36);
-    }
-
-    .feature-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 18px;
-      margin-top: 58px;
-    }
-
-    .feature {
-      padding: 28px;
-      border: 1px solid rgba(160,180,255,.2);
-      border-radius: 26px;
-      background: linear-gradient(145deg, rgba(255,255,255,.1), rgba(255,255,255,.04));
-      box-shadow: 0 20px 60px rgba(0,0,0,.16);
-    }
-
-    .feature .token {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      min-width: 56px;
-      height: 40px;
-      margin-bottom: 18px;
-      padding: 0 14px;
-      border-radius: 999px;
-      color: #06123c;
-      background: #fff;
-      font-size: 14px;
-      font-weight: 950;
-    }
-
-    .feature h3 {
-      margin-bottom: 10px;
-      font-size: 24px;
-      line-height: 1.12;
-    }
-
-    .feature p {
-      margin: 0;
-      color: rgba(255,255,255,.76);
-      font-size: 16px;
-      font-weight: 650;
-    }
-
-    .full-note {
-      margin-top: 22px;
-      padding: 22px 28px;
-      border: 1px solid rgba(160,180,255,.2);
-      border-radius: 24px;
-      color: rgba(255,255,255,.86);
-      background: rgba(255,255,255,.08);
-      font-size: 18px;
-      font-weight: 800;
-      text-align: center;
-    }
-
-    .story-list {
-      display: grid;
-      gap: 18px;
-    }
-
-    .story {
-      display: grid;
-      grid-template-columns: 96px minmax(0, 1fr) 280px;
-      gap: 28px;
-      align-items: center;
-      padding: 30px;
-      border: 1px solid var(--line);
-      border-radius: 28px;
-      background: rgba(255,255,255,.84);
-      box-shadow: 0 20px 56px rgba(45, 58, 126, .1);
-    }
-
-    .badge {
-      display: grid;
-      place-items: center;
-      width: 76px;
-      height: 76px;
-      border-radius: 50%;
-      color: #fff;
-      background: linear-gradient(135deg, #7fa0ff, #7b61ff);
-      font-size: 28px;
-      font-weight: 950;
-    }
-
-    .story h3 {
-      margin-bottom: 8px;
-      color: #081a58;
-      font-size: 26px;
-      line-height: 1.12;
-    }
-
-    .story p {
-      margin-bottom: 8px;
-      color: #465174;
-      font-weight: 650;
-    }
-
-    .fit {
-      padding-left: 24px;
-      border-left: 1px solid var(--line);
-      color: #172463;
-      font-size: 15px;
-      font-weight: 850;
-    }
-
-    .fit span {
-      display: block;
-      margin-bottom: 8px;
-      color: #6b50ef;
-      font-size: 12px;
-      letter-spacing: .14em;
-      text-transform: uppercase;
-    }
-
-    .guide-grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 20px;
-    }
-
-    .guide-card {
-      display: grid;
-      grid-template-columns: 170px minmax(0, 1fr);
-      gap: 22px;
-      align-items: stretch;
-      padding: 18px;
-      border: 1px solid var(--line);
-      border-radius: 30px;
-      color: var(--ink);
-      background: rgba(255,255,255,.86);
-      box-shadow: 0 20px 56px rgba(45, 58, 126, .1);
-      text-decoration: none;
-      transition: transform .2s ease, box-shadow .2s ease;
-    }
-
-    .guide-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 28px 76px rgba(45, 58, 126, .16);
-    }
-
-
-    .guide-card.featured {
-      grid-column: 1 / -1;
-      grid-template-columns: minmax(260px, .7fr) minmax(0, 1.3fr);
-      background:
-        radial-gradient(circle at 88% 0%, rgba(123,97,255,.16), transparent 24rem),
-        rgba(255,255,255,.9);
-    }
-
-    .guide-card img {
-      width: 170px;
-      height: 100%;
-      min-height: 210px;
-      border-radius: 22px;
-      object-fit: cover;
-    }
-
-    .guide-body {
-      display: flex;
-      min-height: 210px;
-      flex-direction: column;
-      justify-content: space-between;
-      gap: 18px;
-    }
-
-    .guide-tag {
-      color: #7b61ff;
-      font-size: clamp(14px, 1vw, 18px);
       font-weight: 950;
       letter-spacing: .12em;
       text-transform: uppercase;
     }
 
-    .guide-card h3 {
-      margin: 12px 0 12px;
-      color: #06164b;
-      font-size: clamp(31px, 2.7vw, 48px);
-      line-height: .98;
+    .dark .label { color: #aebcff; }
+
+    .section-title {
+      margin-bottom: 18px;
+      font-size: clamp(42px, 5.2vw, 72px);
+      line-height: 1;
+      letter-spacing: -.035em;
+      overflow-wrap: anywhere;
     }
 
-    .guide-card .claim {
-      margin: 0 0 14px;
-      padding: 12px 14px;
-      border-left: 4px solid var(--gold);
-      border-radius: 12px;
-      color: #4b33dc;
-      background: rgba(255,214,107,.14);
-      font-size: clamp(18px, 1.45vw, 24px);
-      line-height: 1.22;
-      font-weight: 950;
-    }
-
-    .guide-card p {
+    .lead {
       margin-bottom: 0;
-      color: #59627f;
-      font-size: 16px;
-      font-weight: 750;
+      color: var(--muted);
+      font-size: clamp(18px, 1.8vw, 22px);
+      font-weight: 650;
     }
 
-    .open-link {
+    .dark .lead { color: rgba(255,255,255,.76); }
+
+    .about-layout {
+      display: grid;
+      grid-template-columns: minmax(0, .9fr) minmax(420px, 1.1fr);
+      align-items: center;
+      gap: 52px;
+    }
+
+    .brand-line {
+      margin-bottom: 18px;
+      color: var(--violet-dark);
+      font-size: clamp(25px, 3vw, 38px);
+      line-height: 1.12;
+      font-weight: 900;
+    }
+
+    .product-visual {
+      min-height: 450px;
+      border-radius: 34px;
+      background:
+        radial-gradient(circle at 50% 32%, rgba(128,152,255,.22), transparent 34%),
+        #050817 url("product-lineup-optimized.webp") center 58% / 128% auto no-repeat;
+      box-shadow: 0 34px 90px rgba(7,18,58,.24);
+    }
+
+    .value-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+      margin-top: 38px;
+    }
+
+    .value {
+      --value-accent: var(--violet-dark);
+      --value-soft: #f3f0ff;
+      min-width: 0;
+      padding: 22px;
+      border: 1px solid rgba(110,89,239,.24);
+      border-radius: 24px;
+      background: linear-gradient(145deg, #fff 28%, var(--value-soft));
+      box-shadow: 0 14px 40px rgba(24,40,100,.09);
+    }
+
+    .value:nth-child(3),
+    .value:nth-child(4) {
+      --value-accent: #285bc7;
+      --value-soft: #edf5ff;
+    }
+
+    .value:nth-child(5),
+    .value:nth-child(6) {
+      --value-accent: #8a5a08;
+      --value-soft: #fff7df;
+    }
+
+    .value-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+
+    .value-token {
+      min-width: 46px;
+      min-height: 34px;
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      width: max-content;
-      min-height: 42px;
-      padding: 0 16px;
+      padding: 0 12px;
       border-radius: 999px;
       color: #fff;
-      background: #07123a;
+      background: var(--value-accent);
+      font-size: 13px;
       font-weight: 950;
+    }
+
+    .value-theme {
+      color: var(--value-accent);
+      font-size: 11px;
+      font-weight: 900;
+      letter-spacing: .08em;
+      text-align: right;
+      text-transform: uppercase;
+    }
+
+    .value h3 {
+      margin-bottom: 8px;
+      color: var(--value-accent);
+      font-size: 21px;
+      line-height: 1.08;
+      overflow-wrap: anywhere;
+    }
+
+    .value p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 15px;
+      font-weight: 650;
+    }
+
+    .route-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .route {
+      min-width: 0;
+      padding: 28px;
+      border: 1px solid var(--line);
+      border-radius: 26px;
+      background: #fff;
+      box-shadow: var(--shadow);
+    }
+
+    .route .number {
+      width: 42px;
+      height: 42px;
+      display: grid;
+      place-items: center;
+      margin-bottom: 22px;
+      border-radius: 50%;
+      color: #fff;
+      background: var(--violet);
+      font-size: 13px;
+      font-weight: 950;
+    }
+
+    .route h3 {
+      margin-bottom: 10px;
+      font-size: 25px;
+      line-height: 1.08;
+      overflow-wrap: anywhere;
+    }
+
+    .route p { margin-bottom: 0; color: var(--muted); font-weight: 600; }
+    .route .fit { margin-top: 16px; color: var(--violet-dark); font-size: 14px; font-weight: 800; }
+
+    .guide-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .guide-card {
+      min-width: 0;
+      display: grid;
+      grid-template-columns: 104px minmax(0, 1fr) auto;
+      align-items: center;
+      gap: 18px;
+      padding: 14px;
+      border: 1px solid rgba(255,255,255,.14);
+      border-radius: 22px;
+      color: #fff;
+      background: rgba(255,255,255,.065);
       text-decoration: none;
+      transition: background .18s ease, transform .18s ease;
+    }
+
+    .guide-card:hover,
+    .guide-card:focus-visible {
+      transform: translateY(-2px);
+      background: rgba(255,255,255,.12);
+      outline: none;
+    }
+
+    .guide-card:focus-visible { box-shadow: 0 0 0 3px var(--gold); }
+
+    .guide-card img {
+      width: 104px;
+      height: 86px;
+      border-radius: 16px;
+      object-fit: cover;
+    }
+
+    .guide-card h3 {
+      margin-bottom: 5px;
+      font-size: 20px;
+      line-height: 1.08;
+      overflow-wrap: anywhere;
+    }
+
+    .guide-card p {
+      margin: 0;
+      color: rgba(255,255,255,.66);
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .arrow {
+      padding-right: 6px;
+      color: var(--gold);
+      font-size: 24px;
+      font-weight: 900;
+    }
+
+    .timeline {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    #workflow.light {
+      background:
+        radial-gradient(circle at 12% 8%, rgba(110,89,239,.2), transparent 30rem),
+        radial-gradient(circle at 88% 70%, rgba(134,160,255,.16), transparent 28rem),
+        linear-gradient(180deg, #f5f2ff, #e9e8fb);
+    }
+
+    .step {
+      min-width: 0;
+      padding: 20px;
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      background: rgba(255,255,255,.9);
+      box-shadow: 0 12px 34px rgba(26,42,104,.08);
+    }
+
+    .step .step-number {
+      width: 36px;
+      height: 36px;
+      display: grid;
+      place-items: center;
+      margin-bottom: 16px;
+      border-radius: 50%;
+      color: #fff;
+      background: var(--ink);
+      font-size: 12px;
+      font-weight: 950;
+    }
+
+    .step h3 {
+      margin-bottom: 8px;
+      font-size: 19px;
+      line-height: 1.12;
+      overflow-wrap: anywhere;
+    }
+
+    .step p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .step.key {
+      border-color: rgba(110,89,239,.62);
+      background: linear-gradient(145deg, #f7f4ff, #e7e1ff);
+      box-shadow:
+        0 18px 44px rgba(86,66,205,.16),
+        inset 0 0 0 1px rgba(110,89,239,.12);
+    }
+
+    .step.key .step-number {
+      background: linear-gradient(135deg, #3d2bb8, #765eff);
+      box-shadow: 0 8px 20px rgba(79,57,205,.24);
+    }
+
+    .step.key h3 { color: #4e39c9; }
+    .workflow-note {
+      display: grid;
+      grid-template-columns: auto minmax(0, 1fr);
+      gap: 16px;
+      align-items: start;
+      margin-top: 18px;
+      padding: 22px 24px;
+      border-radius: 22px;
+      color: #fff;
+      background: linear-gradient(135deg, #18295c, #5a46dc);
+      box-shadow: var(--shadow);
+    }
+
+    .workflow-note .note-icon {
+      width: 38px;
+      height: 38px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      color: var(--ink);
+      background: var(--gold);
+      font-weight: 950;
+    }
+
+    .workflow-note h3 { margin-bottom: 4px; font-size: 20px; }
+    .workflow-note p { margin: 0; color: rgba(255,255,255,.8); font-weight: 600; }
+    .workflow-note strong { color: #fff; font-weight: 900; }
+
+    .time-highlight {
+      display: inline-block;
+      padding: 1px 7px 2px;
+      border-radius: 7px;
+      color: #231a54;
+      background: var(--gold);
+      font-weight: 950;
+      white-space: nowrap;
+    }
+
+    .required {
+      display: grid;
+      grid-template-columns: minmax(0, .72fr) minmax(0, 1.28fr);
+      gap: 28px;
+      align-items: center;
+      margin-bottom: 20px;
+      padding: 30px;
+      border: 1px solid rgba(255,214,107,.46);
+      border-radius: 28px;
+      color: #fff;
+      background:
+        radial-gradient(circle at 8% 0%, rgba(255,214,107,.18), transparent 22rem),
+        linear-gradient(135deg, #121d47, #2b246d);
+      box-shadow: 0 28px 76px rgba(1,5,20,.24);
+    }
+
+    .required .tag {
+      display: inline-flex;
+      margin-bottom: 12px;
+      padding: 7px 11px;
+      border-radius: 999px;
+      color: #251d58;
+      background: var(--gold);
+      font-size: 12px;
+      font-weight: 950;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+
+    .required h3 {
+      margin-bottom: 8px;
+      font-size: clamp(28px, 3.5vw, 44px);
+      line-height: 1.02;
+    }
+
+    .required p { margin: 0; color: rgba(255,255,255,.76); font-weight: 600; }
+
+    .required ul {
+      display: grid;
+      gap: 12px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .required li {
+      position: relative;
+      padding-left: 30px;
+      font-weight: 700;
+    }
+
+    .required li::before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      color: var(--green);
+      font-weight: 950;
     }
 
     .check-grid {
       display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 20px;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
     }
 
     .panel {
-      padding: 34px;
+      min-width: 0;
+      padding: 26px;
       border: 1px solid var(--line);
-      border-radius: 30px;
-      background: rgba(255,255,255,.86);
-      box-shadow: 0 20px 56px rgba(45, 58, 126, .1);
-    }
-
-    .panel h3 {
-      margin-bottom: 10px;
-      color: #081a58;
-      font-size: 28px;
-      line-height: 1.08;
-    }
-
-    .panel p {
-      color: #465174;
-      font-weight: 750;
-    }
-
-    .checklist-list {
-      display: grid;
-      gap: 13px;
-      margin: 0;
-      padding: 0;
-      list-style: none;
-      color: #07123a;
-      font-size: 16px;
-      font-weight: 750;
-    }
-
-    .checklist-list li {
-      position: relative;
-      padding-left: 30px;
-    }
-
-    .checklist-list li::before {
-      content: "";
-      position: absolute;
-      left: 0;
-      top: .45em;
-      width: 14px;
-      height: 14px;
-      border-radius: 4px;
-      border: 2px solid #6b50ef;
-      background: rgba(123,97,255,.08);
-    }
-
-    .dosdonts {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 14px;
-      margin-top: 18px;
-    }
-
-    .mini-panel {
-      padding: 18px;
-      border: 1px solid var(--line);
-      border-radius: 20px;
+      border-radius: 24px;
       background: #fff;
+      box-shadow: 0 14px 42px rgba(24,40,100,.08);
     }
 
-    .mini-panel h4 {
-      margin: 0 0 12px;
-      color: #081a58;
-      font-size: 16px;
+    .panel h3 { margin-bottom: 14px; font-size: 24px; line-height: 1.08; }
+    .panel ul { display: grid; gap: 10px; margin: 0; padding-left: 20px; color: var(--muted); }
+    .panel li { padding-left: 3px; font-weight: 600; }
+    .panel li strong { font-weight: 900; }
+
+    .panel.must {
+      border-color: rgba(110,89,239,.34);
+      background: linear-gradient(145deg, #fff, #f1edff);
     }
 
-    .mini-panel ul {
-      display: grid;
-      gap: 10px;
-      margin: 0;
-      padding: 0;
-      list-style: none;
-      color: #465174;
-      font-size: 14px;
-      font-weight: 750;
+    .panel.must h3,
+    .panel.must li strong,
+    .panel.must li::marker { color: #563fd2; }
+
+    .panel.human {
+      border-color: rgba(50,115,213,.28);
+      background: linear-gradient(145deg, #fff, #edf6ff);
     }
 
-    .good li::before { content: "+ "; color: #148a45; font-weight: 950; }
-    .avoid li::before { content: "x "; color: #ce2e3f; font-weight: 950; }
+    .panel.human h3,
+    .panel.human li strong,
+    .panel.human li::marker { color: #245fb8; }
 
-    .requirements li {
-      padding-top: 8px;
-      padding-bottom: 8px;
-      border-bottom: 1px solid rgba(126,144,220,.16);
+    .panel.publish {
+      border-color: rgba(201,143,24,.32);
+      background: linear-gradient(145deg, #fff, #fff6db);
     }
+
+    .panel.publish h3,
+    .panel.publish li strong,
+    .panel.publish li::marker { color: #8a5a08; }
+
+    .avoid {
+      margin-top: 16px;
+      padding: 22px 24px;
+      border: 1px solid rgba(216,102,126,.22);
+      border-radius: 22px;
+      color: #693043;
+      background: #fff4f7;
+    }
+
+    .avoid strong { display: block; margin-bottom: 8px; color: #9a3654; }
+    .avoid p { margin: 0; font-weight: 600; }
 
     .good-to-know {
-      grid-column: 1 / -1;
       display: grid;
-      grid-template-columns: 240px minmax(0, 1fr);
-      gap: 30px;
-      align-items: center;
-      padding: 36px;
-      border-radius: 32px;
+      grid-template-columns: auto minmax(0, 1fr);
+      gap: 18px;
+      align-items: start;
+      margin-top: 16px;
+      padding: 24px;
+      border-radius: 22px;
       color: #fff;
-      background:
-        radial-gradient(circle at 82% 0%, rgba(93,215,255,.22), transparent 28rem),
-        linear-gradient(135deg, #07123a, #3d2db5);
-      box-shadow: 0 28px 90px rgba(61,45,181,.24);
+      background: var(--ink);
     }
 
-    .good-to-know h3 {
-      margin: 0;
-      color: #fff;
-      font-size: 34px;
-      line-height: 1;
+    .good-to-know .money {
+      width: 44px;
+      height: 44px;
+      display: grid;
+      place-items: center;
+      border-radius: 14px;
+      color: var(--ink);
+      background: var(--green);
+      font-weight: 950;
     }
 
-    .good-to-know p {
-      margin: 0;
-      color: rgba(255,255,255,.86);
-      font-size: 18px;
-      font-weight: 750;
-    }
-
-    .good-to-know strong {
-      color: #ffe681;
-    }
-
-    .email-highlight {
-      color: #ffd66b !important;
-      text-shadow: 0 0 22px rgba(255,214,107,.28);
-    }
+    .good-to-know h3 { margin-bottom: 5px; font-size: 21px; }
+    .good-to-know p { margin: 0; color: rgba(255,255,255,.75); font-weight: 600; }
+    .good-to-know a { color: var(--gold); }
 
     .closing {
-      min-height: 720px;
-      display: grid;
-      align-items: center;
+      padding: 104px 0;
+      color: #fff;
       text-align: center;
       background:
-        linear-gradient(180deg, rgba(3,7,19,.82), rgba(3,7,19,.96)),
+        linear-gradient(rgba(3,7,20,.56), rgba(3,7,20,.9)),
         url("scene-moon.jpg") center / cover no-repeat;
     }
 
-    .closing .shell {
-      position: relative;
-      z-index: 2;
-    }
-
     .closing h2 {
-      margin-bottom: 24px;
-      font-size: clamp(64px, 10vw, 132px);
-      line-height: .9;
+      margin-bottom: 18px;
+      font-size: clamp(54px, 8vw, 96px);
+      line-height: .94;
+      letter-spacing: -.04em;
     }
 
     .closing p {
-      width: min(760px, 100%);
-      margin: 0 auto 24px;
-      color: rgba(255,255,255,.9);
-      font-size: clamp(18px, 2vw, 25px);
-      font-weight: 850;
-    }
-
-    footer {
-      padding: 28px 0 44px;
-      color: rgba(255,255,255,.56);
-      background: #02040d;
-      font-size: 13px;
+      max-width: 720px;
+      margin: 0 auto 18px;
+      color: rgba(255,255,255,.8);
+      font-size: 19px;
       font-weight: 650;
     }
 
-    .reveal {
-      opacity: 0;
-      transform: translateY(24px);
-      transition: opacity .7s ease, transform .7s ease;
+    footer {
+      padding: 24px 0;
+      color: rgba(255,255,255,.5);
+      background: #02040d;
+      font-size: 13px;
     }
 
-    .reveal.in-view {
-      opacity: 1;
-      transform: translateY(0);
+    @media (max-width: 1020px) {
+      .about-layout { grid-template-columns: 1fr; }
+      .product-visual { min-height: 390px; }
+      .value-grid,
+      .route-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .timeline { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .check-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
     }
 
-    @media (max-width: 1060px) {
-      .overview-grid,
-      .metrics,
-      .timeline,
-      .feature-grid {
-        grid-template-columns: repeat(2, 1fr);
+    @media (max-width: 760px) {
+      .shell { width: min(100% - 28px, 1240px); }
+      section { scroll-margin-top: 64px; }
+      .nav { min-height: 60px; gap: 12px; }
+      .brand img { width: 92px; }
+      .navlinks { justify-content: space-between; overflow: visible; }
+      .navlinks a:first-child { display: none; }
+      .navlinks a { padding: 7px 5px; font-size: 11px; }
+
+      .hero {
+        min-height: auto;
+        background-position: 62% center;
       }
 
-      .about-layout,
-      .story,
-      .good-to-know {
-        grid-template-columns: 1fr;
-      }
+      .hero-inner { padding: 74px 0 66px; }
+      .eyebrow { margin-bottom: 18px; font-size: 12px; }
+      .eyebrow::before { width: 30px; }
+      h1 { font-size: clamp(44px, 13vw, 62px); line-height: .96; }
+      .hero-lead { font-size: 17px; }
+      .button { width: 100%; }
 
-      .fit {
-        padding-left: 0;
-        border-left: 0;
-      }
+      .section-pad { padding: 62px 0; }
+      .section-head { margin-bottom: 30px; }
+      .section-title { font-size: clamp(34px, 10vw, 44px); line-height: 1.03; }
+      .lead { font-size: 17px; }
 
-      .product-cinema { min-height: 390px; }
-    }
-
-    @media (max-width: 780px) {
-      .shell { width: min(100% - 28px, 1200px); }
-      .topbar { position: static; }
-      .nav { align-items: flex-start; flex-direction: column; padding: 18px 0; }
-      .navlinks { justify-content: flex-start; }
-      .hero { min-height: auto; }
-      .hero-inner { padding: 66px 0 44px; }
-      h1 { font-size: 62px; }
-      .section-pad { padding: 76px 0; }
-      .overview-grid,
-      .metrics,
-      .timeline,
-      .note-grid,
-      .feature-grid,
+      .about-layout { gap: 30px; }
+      .product-visual { min-height: 300px; border-radius: 24px; background-size: 148% auto; }
+      .value-grid,
+      .route-grid,
       .guide-grid,
-      .check-grid,
-      .dosdonts {
-        grid-template-columns: 1fr;
-      }
-      .overview-card {
-        border-right: 0;
-        border-bottom: 1px solid rgba(255,255,255,.12);
-      }
+      .check-grid { grid-template-columns: 1fr; }
+
+      .value,
+      .route,
+      .panel { padding: 22px; }
+
       .guide-card {
+        grid-template-columns: 76px minmax(0, 1fr) auto;
+        gap: 12px;
+        padding: 11px;
+        border-radius: 18px;
+      }
+
+      .guide-card img { width: 76px; height: 72px; border-radius: 13px; }
+      .guide-card h3 { font-size: 17px; }
+      .guide-card p { font-size: 12px; }
+
+      .timeline { grid-template-columns: 1fr; gap: 10px; }
+      .step {
+        display: grid;
+        grid-template-columns: 42px minmax(0, 1fr);
+        column-gap: 12px;
+        padding: 16px;
+        border-radius: 18px;
+      }
+
+      .step .step-number {
+        grid-row: 1 / span 2;
+        margin: 0;
+      }
+
+      .step h3 { margin: 0 0 3px; font-size: 18px; }
+      .step p { font-size: 13px; }
+
+      .workflow-note,
+      .good-to-know { grid-template-columns: 1fr; }
+
+      .required {
         grid-template-columns: 1fr;
+        gap: 20px;
+        padding: 24px;
       }
-  
-      .guide-card.featured {
-        grid-template-columns: 1fr;
-      }
-      .guide-card img {
-        width: 100%;
-        height: 210px;
-      }
-      .product-cinema {
-        min-height: 320px;
-        background-size: 150% auto;
+
+      .required h3 { font-size: 32px; }
+      .closing { padding: 80px 0; }
+      .closing p { font-size: 17px; }
+    }
+
+    @media (max-width: 360px) {
+      .shell { width: min(100% - 24px, 1240px); }
+      h1 { font-size: 42px; }
+      .section-title { font-size: 33px; }
+      .guide-card { grid-template-columns: 66px minmax(0, 1fr) auto; }
+      .guide-card img { width: 66px; height: 66px; }
+      .guide-card p { display: none; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after {
+        animation-duration: .01ms !important;
+        transition-duration: .01ms !important;
       }
     }
   </style>
@@ -953,349 +809,271 @@
 <body>
   <header class="topbar">
     <div class="shell nav">
-      <a class="brand" href="#top" aria-label="POCOCO Creator Partnership Guide">
+      <a class="brand" href="#top" aria-label="POCOCO guide home">
         <img src="logo-white.png" alt="POCOCO">
       </a>
       <nav class="navlinks" aria-label="Guide sections">
-        <a href="#workflow">Workflow</a>
-        <a href="#about">About</a>
-        <a href="#direction">Creative Direction</a>
-        <a href="#inspiration">Inspiration</a>
-        <a href="#checklist">Checklist</a>
+        <a href="#about">Brand</a>
+        <a href="#direction">Ideas</a>
+        <a href="#inspiration">Angles</a>
+        <a href="#workflow">Steps</a>
+        <a href="#essentials">Checklist</a>
       </nav>
     </div>
   </header>
 
   <main id="top">
     <section class="hero">
-      <div class="shell hero-inner reveal">
-        <div class="kicker">POCOCO Creator Partnership Guide</div>
-        <h1>Bring the universe into bedtime stories.</h1>
-        <div class="hero-lead">
-          <p>Welcome to the POCOCO creator community. This guide gives you the collaboration workflow, brand story, content angles, publishing rules, and creator resources you need to make content that feels authentic, performs well, and needs fewer revisions.</p>
-          <p><strong>We cannot wait to see your creativity bring the universe to life.</strong></p>
-        </div>
-        <div class="hero-actions">
-          <a class="button primary" href="#workflow">Start the guide</a>
-          <a class="button" href="#inspiration">Explore content angles</a>
+      <div class="shell hero-inner">
+        <div class="eyebrow">Gifted Product &amp; Affiliate Creator Partnership Guide</div>
+        <h1>Create a universe people want to step into.</h1>
+        <p class="hero-lead">Welcome to POCOCO. This guide is here to help you build content around a <strong>real human moment</strong>, make the visual transformation easy to feel, and move through the collaboration with clarity.</p>
+        <div class="actions">
+          <a class="button primary" href="#about">Meet POCOCO</a>
+          <a class="button" href="#inspiration">Find your content angle</a>
         </div>
       </div>
+    </section>
 
-      <div class="hero-strip">
-        <div class="shell overview-grid">
-          <article class="overview-card">
-            <span class="num">01</span>
-            <h3>Workflow</h3>
-            <p>Collaboration timeline, review process, and publishing steps.</p>
+    <section id="about" class="light section-pad">
+      <div class="shell">
+        <div class="about-layout">
+          <div>
+            <div class="label">About POCOCO</div>
+            <h2 class="section-title">More than a projector. A new visual identity for the room.</h2>
+            <p class="brand-line">We believe the last thing you see before sleep should be a universe, not a screen.</p>
+            <p class="lead">POCOCO creates immersive galaxy projection experiences for calmer evenings, shared imagination, and beautiful screen-free moments. The strongest content shows not only what the product looks like, but how the room—and the people inside it—feel different after it turns on.</p>
+          </div>
+          <div class="product-visual" role="img" aria-label="POCOCO galaxy projector product lineup"></div>
+        </div>
+
+        <div class="value-grid">
+          <article class="value">
+            <div class="value-top"><span class="value-token">Galaxy</span><span class="value-theme">Immersive visuals</span></div>
+            <h3>Real Galaxy Experience</h3>
+            <p>Authentic astronomical imagery transforms the whole room into a visual world people can share.</p>
           </article>
-          <article class="overview-card">
-            <span class="num">02</span>
-            <h3>About POCOCO</h3>
-            <p>Brand story, product highlights, and key selling points.</p>
+          <article class="value">
+            <div class="value-top"><span class="value-token">HD</span><span class="value-theme">Immersive visuals</span></div>
+            <h3>HD Projection Quality</h3>
+            <p>Crisp projection brings galaxies, nebulae, and fine details to life.</p>
           </article>
-          <article class="overview-card">
-            <span class="num">03</span>
-            <h3>Content Guide & Inspiration</h3>
-            <p>Audience-specific ideas, messaging angles, and creator examples.</p>
+          <article class="value">
+            <div class="value-top"><span class="value-token">Sleep</span><span class="value-theme">Low-interaction comfort</span></div>
+            <h3>Better Bedtime Environment</h3>
+            <p>A screen-free visual focus helps create softer wind-down moments.</p>
           </article>
-          <article class="overview-card">
-            <span class="num">04</span>
-            <h3>Creator Success Checklist</h3>
-            <p>Filming, content creation, review, and publishing requirements.</p>
+          <article class="value">
+            <div class="value-top"><span class="value-token">Quiet</span><span class="value-theme">Low-interaction comfort</span></div>
+            <h3>Eye-Friendly and Quiet</h3>
+            <p>Soft diffused light and silent operation feel more comfortable at night.</p>
           </article>
+          <article class="value">
+            <div class="value-top"><span class="value-token">6H</span><span class="value-theme">Flexible use</span></div>
+            <h3>Cordless and Portable</h3>
+            <p>Up to 6 hours of battery life makes it easy to move between spaces.</p>
+          </article>
+          <article class="value">
+            <div class="value-top"><span class="value-token">Timer</span><span class="value-theme">Flexible use</span></div>
+            <h3>3-Stage Timer</h3>
+            <p>15 / 30 / 60 minute auto shut-off options support worry-free use.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="direction" class="white section-pad">
+      <div class="shell">
+        <div class="section-head">
+          <div class="label">Creative Direction</div>
+          <h2 class="section-title">Start with a human moment—not the product.</h2>
+          <p class="lead">Choose one storytelling route that already feels natural for your voice and audience. POCOCO should become the visible turning point in the story.</p>
+        </div>
+
+        <div class="route-grid">
+          <article class="route">
+            <div class="number">01</div>
+            <h3>Problem to possibility</h3>
+            <p>Begin with a recognizable challenge, share your perspective, then show how a different environment can support the moment.</p>
+            <div class="fit">Best for: education, sleep, parenting, wellness</div>
+          </article>
+          <article class="route">
+            <div class="number">02</div>
+            <h3>Personal ritual</h3>
+            <p>Invite viewers into a real evening, reset, reading habit, family routine, or quiet moment where POCOCO fits naturally.</p>
+            <div class="fit">Best for: lifestyle, self-care, recovery, vlogs</div>
+          </article>
+          <article class="route">
+            <div class="number">03</div>
+            <h3>Visual transformation</h3>
+            <p>Let the before-and-after room change, atmosphere, movement, and human reaction carry the story.</p>
+            <div class="fit">Best for: home, design, gifts, immersive visuals</div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="inspiration" class="dark section-pad">
+      <div class="shell">
+        <div class="section-head">
+          <div class="label">Content Guide & Inspiration</div>
+          <h2 class="section-title">Choose the guide closest to your audience.</h2>
+          <p class="lead">Each category includes a story framework, message ideas, safe wording, and scenes that can help you make the concept your own.</p>
+        </div>
+
+        <div class="guide-grid">
+          <a class="guide-card" href="https://weschennuo-cmd.github.io/parenting-family/" target="_blank" rel="noopener">
+            <img src="guide-parenting-family.webp" alt="Parent and child under a POCOCO projection" loading="lazy" decoding="async">
+            <div><h3>Parenting & Family</h3><p>Bedtime transitions, connection, and shared imagination</p></div>
+            <span class="arrow" aria-hidden="true">›</span>
+          </a>
+          <a class="guide-card" href="https://weschennuo-cmd.github.io/sleep-recovery/" target="_blank" rel="noopener">
+            <img src="guide-sleep-recovery.webp" alt="A calm nighttime recovery environment" loading="lazy" decoding="async">
+            <div><h3>Sleep & Recovery</h3><p>Wind-down habits and lower-interaction evenings</p></div>
+            <span class="arrow" aria-hidden="true">›</span>
+          </a>
+          <a class="guide-card" href="https://weschennuo-cmd.github.io/neurodivergent-support/" target="_blank" rel="noopener">
+            <img src="guide-neurodivergent-support.webp" alt="A quiet projection environment" loading="lazy" decoding="async">
+            <div><h3>Neurodivergent Support</h3><p>Individual preferences, transitions, and supportive spaces</p></div>
+            <span class="arrow" aria-hidden="true">›</span>
+          </a>
+          <a class="guide-card" href="https://weschennuo-cmd.github.io/mental-wellness/" target="_blank" rel="noopener">
+            <img src="guide-mental-wellness.webp" alt="A reflective evening under projection" loading="lazy" decoding="async">
+            <div><h3>Mental Wellness</h3><p>Personal reset rituals and emotionally spacious rooms</p></div>
+            <span class="arrow" aria-hidden="true">›</span>
+          </a>
+          <a class="guide-card" href="https://weschennuo-cmd.github.io/wellness-healthy-living/" target="_blank" rel="noopener">
+            <img src="guide-wellness-healthy-living.webp" alt="A healthy evening routine with projection" loading="lazy" decoding="async">
+            <div><h3>Wellness & Healthy Living</h3><p>Recovery moments and sustainable evening routines</p></div>
+            <span class="arrow" aria-hidden="true">›</span>
+          </a>
+          <a class="guide-card" href="https://weschennuo-cmd.github.io/personal-growth-womens-lifestyle/" target="_blank" rel="noopener">
+            <img src="guide-personal-growth.webp" alt="A personal self-care moment under projection" loading="lazy" decoding="async">
+            <div><h3>Personal Growth & Women’s Lifestyle</h3><p>Mental load, boundaries, and personal time</p></div>
+            <span class="arrow" aria-hidden="true">›</span>
+          </a>
+          <a class="guide-card" href="https://weschennuo-cmd.github.io/lifestyle-home-design/" target="_blank" rel="noopener">
+            <img src="guide-lifestyle-home-design.webp" alt="A designed room transformed by projection" loading="lazy" decoding="async">
+            <div><h3>Lifestyle, Home & Design</h3><p>Room transformations, atmosphere, and gift ideas</p></div>
+            <span class="arrow" aria-hidden="true">›</span>
+          </a>
         </div>
       </div>
     </section>
 
     <section id="workflow" class="light section-pad">
       <div class="shell">
-        <div class="section-head reveal">
-          <div class="label">Collaboration Workflow</div>
-          <h2 class="section-title">A clean path from product delivery to live post.</h2>
-          <p class="lead">The process is simple: receive the product, create the draft, get approval, publish, share the live link, and begin earning affiliate commission.</p>
+        <div class="section-head">
+          <div class="label">How We’ll Work Together</div>
+          <h2 class="section-title">A clear path from product delivery to live post.</h2>
+          <p class="lead">You bring the creative voice. We help keep the product details, final content, and affiliate publishing information aligned.</p>
         </div>
 
-        <div class="metrics reveal">
-          <div class="metric"><strong>1-2</strong><span>weeks to submit your draft after receiving product</span></div>
-          <div class="metric"><strong>1-2</strong><span>revision rounds may be requested if needed</span></div>
-          <div class="metric"><strong>08</strong><span>clear collaboration steps from start to earning</span></div>
-          <div class="metric"><strong>100%</strong><span>content reviewed before publishing</span></div>
+        <div class="timeline">
+          <article class="step"><span class="step-number">01</span><h3>Collaboration confirmed</h3><p>We align on the gifted partnership and content expectations.</p></article>
+          <article class="step"><span class="step-number">02</span><h3>Receive the product</h3><p>Explore it in a real environment before filming.</p></article>
+          <article class="step key"><span class="step-number">03</span><h3>Create the content</h3><p>Build the story in your own style and aim for the agreed timing.</p></article>
+          <article class="step key"><span class="step-number">04</span><h3>Share the draft</h3><p>Send the complete draft before anything goes live.</p></article>
+          <article class="step key"><span class="step-number">05</span><h3>Final alignment</h3><p>We confirm brand accuracy and any essential edits.</p></article>
+          <article class="step"><span class="step-number">06</span><h3>Publish</h3><p>Post only after final approval on the agreed date.</p></article>
+          <article class="step key"><span class="step-number">07</span><h3>Share the live link</h3><p>Send the published content link to the POCOCO team.</p></article>
+          <article class="step key"><span class="step-number">08</span><h3>Start earning commission</h3><p>Use your affiliate link and creator code so approved sales can be tracked.</p></article>
         </div>
 
-        <div class="timeline reveal" style="margin-top: 22px;">
-          <article class="step"><small>01</small><h3>Collaboration Confirmed</h3><p>The partnership is aligned and ready to begin.</p></article>
-          <article class="step"><small>02</small><h3>Receive Product</h3><p>Use the product in a real environment before filming.</p></article>
-          <article class="step highlight priority"><small>03</small><h3>Create Content</h3><p>Submit your draft within <span class="mark">1-2 weeks</span> after receiving your product.</p></article>
-          <article class="step highlight priority"><small>04</small><h3>Submit Draft for Review</h3><p>Send the draft before anything goes live.</p></article>
-          <article class="step highlight priority"><small>05</small><h3>Receive Final Approval</h3><p>We confirm brand accuracy while you keep creative freedom.</p></article>
-          <article class="step"><small>06</small><h3>Publish Content</h3><p>Post only after final approval is received.</p></article>
-          <article class="step"><small>07</small><h3>Share Live Post Link</h3><p>Send the live link after publishing.</p></article>
-          <article class="step highlight"><small>08</small><h3>Start Earning Affiliate Commission</h3><p>Add your affiliate link and creator discount code when posting.</p></article>
-        </div>
-
-        <div class="note-grid reveal">
-          <article class="note">
-            <h3>Draft review</h3>
-            <p>All content must be reviewed and approved before publishing. Up to <span class="mark">1-2 revision rounds</span> may be requested if needed.</p>
-          </article>
-          <article class="note">
-            <h3>Expected timeline</h3>
-            <p>Submit your draft within <span class="mark">1-2 weeks</span> whenever possible. Need more time? Let us know and we can adjust the timeline together.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section id="about" class="night section-pad">
-      <div class="shell">
-        <div class="about-layout reveal">
+        <aside class="workflow-note">
+          <div class="note-icon">i</div>
           <div>
-            <div class="label">About POCOCO</div>
-            <h2 class="section-title">A calmer last moment before sleep.</h2>
-            <p class="brand-line">We believe the last thing you see before sleep should be a universe, not a screen.</p>
-            <p class="lead">POCOCO creates immersive galaxy projection experiences designed to inspire relaxation, mindfulness, imagination, and better bedtime routines.</p>
+            <h3>Timing, made easy</h3>
+            <p>Please aim to share your draft within <span class="time-highlight">1–2 weeks</span> of receiving the product. We review the <strong>final draft</strong> before publishing to keep the collaboration smooth. If your timing changes, simply let us know—we are happy to coordinate.</p>
           </div>
-          <div class="product-cinema" aria-label="POCOCO product lineup"></div>
-        </div>
-
-        <div class="feature-grid reveal">
-          <article class="feature"><div class="token">Galaxy</div><h3>Real Galaxy Experience</h3><p>Authentic astronomical imagery creates an immersive and inspiring atmosphere.</p></article>
-          <article class="feature"><div class="token">HD</div><h3>HD Projection Quality</h3><p>High-definition projection brings every galaxy, nebula, and detail to life.</p></article>
-          <article class="feature"><div class="token">Sleep</div><h3>Better Bedtime Environment</h3><p>Creates calming, screen-free moments that support better sleep and relaxation.</p></article>
-          <article class="feature"><div class="token">Quiet</div><h3>Eye-Friendly and Quiet</h3><p>Soft diffused light and silent operation make nighttime use more comfortable.</p></article>
-          <article class="feature"><div class="token">6H</div><h3>Cordless and Portable</h3><p>Up to 6 hours of battery life makes the product flexible for use anywhere.</p></article>
-          <article class="feature"><div class="token">Timer</div><h3>3-Stage Timer</h3><p>15 / 30 / 60 minute auto shut-off options support worry-free use.</p></article>
-        </div>
-        <div class="full-note reveal">Perfect for relaxation, bedtime routines, mindfulness, family moments, and creating a calming atmosphere at home.</div>
+        </aside>
       </div>
     </section>
 
-    <section id="direction" class="light section-pad">
+    <section id="essentials" class="white section-pad">
       <div class="shell">
-        <div class="section-head reveal">
-          <div class="label">Creative Direction</div>
-          <h2 class="section-title">Do not just show the product. Build a reason to care.</h2>
-          <p class="lead">Every creator has a unique audience, storytelling style, and creative niche. This section is designed to inspire creative thinking and help you naturally integrate POCOCO into your content. The examples are inspiration only, so adapt them based on your audience, expertise, and personal style.</p>
+        <div class="section-head">
+          <div class="label">Creator Essentials</div>
+          <h2 class="section-title">A short checklist for strong, usable footage.</h2>
+          <p class="lead">Keep your own voice and creative style. These essentials help the product look clear, immersive, and naturally connected to your story.</p>
         </div>
 
-        <div class="story-list reveal">
-          <article class="story">
-            <div class="badge">01</div>
-            <div>
-              <h3>Problem-Based Storytelling</h3>
-              <p><strong>For creators who educate, explain, or solve problems.</strong></p>
-              <p>Start with a relatable challenge, misconception, or everyday pain point. Share your perspective, experience, or professional knowledge, then naturally introduce POCOCO as one part of a healthier environment or routine, not as the complete solution.</p>
-            </div>
-            <div class="fit"><span>Suitable for</span>Sleep, Parenting, Mental Wellness, Neurodivergent Support, Educational Creators</div>
-          </article>
+        <article class="required">
+          <div>
+            <span class="tag">Required projection coverage</span>
+            <h3>Film black-and-white first.</h3>
+            <p>Black-and-white projections are often the clearest and most visually striking footage, so they should be part of every content set.</p>
+          </div>
+          <ul>
+            <li>Always capture the black-and-white projection.</li>
+            <li>If your package includes both black-and-white and color discs, film both—color-only footage is not sufficient.</li>
+            <li>For each featured disc, include a full projection, a person in the scene, a natural activity, and a brief product interaction.</li>
+          </ul>
+        </article>
 
-          <article class="story">
-            <div class="badge">02</div>
-            <div>
-              <h3>Personal Experience Storytelling</h3>
-              <p><strong>For creators who share their own lifestyle and daily routines.</strong></p>
-              <p>Invite your audience into your personal experiences, habits, and everyday moments. Rather than teaching, let POCOCO become a natural part of your story.</p>
-            </div>
-            <div class="fit"><span>Suitable for</span>Wellness, Women's Lifestyle, Fitness, Productivity, Travel, Daily Vlogs</div>
-          </article>
-
-          <article class="story">
-            <div class="badge">03</div>
-            <div>
-              <h3>Immersive Experience Storytelling</h3>
-              <p><strong>For creators who inspire through visuals, atmosphere, and design.</strong></p>
-              <p>Not every piece of content needs to solve a problem. Sometimes people connect with beautiful spaces, meaningful moments, and inspiring environments. Focus on lighting, atmosphere, interior design, aesthetics, and immersive storytelling.</p>
-            </div>
-            <div class="fit"><span>Suitable for</span>Lifestyle, Home Decor, Interior Design, Cozy Living, Gift Ideas, Room Makeovers</div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section id="inspiration" class="light section-pad">
-      <div class="shell">
-        <div class="section-head reveal">
-          <div class="label">Content Guide and Inspiration</div>
-          <h2 class="section-title">Choose the angle your audience already wants to believe in.</h2>
-          <p class="lead">To help you create content that feels natural and authentic, we prepared niche-specific content guides. Review the guide that best matches your content category.</p>
-        </div>
-
-        <div class="guide-grid reveal">
-          <a class="guide-card" href="https://weschennuo-cmd.github.io/parenting-family/" target="_blank" rel="noopener">
-            <img src="guide-parenting-family.webp" alt="">
-            <div class="guide-body">
-              <div><h3>Parenting and Family</h3><p class="claim">Best fit for baby sleep coaches, parenting experts, mom creators, family creators, and new parents.</p></div>
-              <span class="open-link">Open guide</span>
-            </div>
-          </a>
-
-          <a class="guide-card" href="https://weschennuo-cmd.github.io/sleep-recovery/" target="_blank" rel="noopener">
-            <img src="guide-sleep-recovery.webp" alt="">
-            <div class="guide-body">
-              <div><h3>Sleep and Recovery</h3><p class="claim">Best fit for sleep experts, sleep coaches, insomnia educators, recovery creators, and wellness creators.</p></div>
-              <span class="open-link">Open guide</span>
-            </div>
-          </a>
-
-          <a class="guide-card" href="https://weschennuo-cmd.github.io/neurodivergent-support/" target="_blank" rel="noopener">
-            <img src="guide-neurodivergent-support.webp" alt="">
-            <div class="guide-body">
-              <div><h3>Neurodivergent Support</h3><p class="claim">Best fit for ADHD creators, autism advocates, neurodivergent educators, and sensory support professionals.</p></div>
-              <span class="open-link">Open guide</span>
-            </div>
-          </a>
-
-          <a class="guide-card" href="https://weschennuo-cmd.github.io/mental-wellness/" target="_blank" rel="noopener">
-            <img src="guide-mental-wellness.webp" alt="">
-            <div class="guide-body">
-              <div><h3>Mental Wellness and Emotional Health</h3><p class="claim">Best fit for therapists, psychologists, anxiety and stress relief creators, breathwork coaches, and meditation coaches.</p></div>
-              <span class="open-link">Open guide</span>
-            </div>
-          </a>
-
-          <a class="guide-card" href="https://weschennuo-cmd.github.io/wellness-healthy-living/" target="_blank" rel="noopener">
-            <img src="guide-wellness-healthy-living.webp" alt="">
-            <div class="guide-body">
-              <div><h3>Wellness and Healthy Living</h3><p class="claim">Best fit for wellness creators, healthy lifestyle influencers, holistic health educators, fitness recovery creators, and travel wellness creators.</p></div>
-              <span class="open-link">Open guide</span>
-            </div>
-          </a>
-
-          <a class="guide-card" href="https://weschennuo-cmd.github.io/personal-growth-womens-lifestyle/" target="_blank" rel="noopener">
-            <img src="guide-personal-growth.webp" alt="">
-            <div class="guide-body">
-              <div><h3>Personal Growth and Women's Lifestyle</h3><p class="claim">Best fit for women's lifestyle creators, personal growth influencers, women's health and hormone wellness creators, productivity creators, and female entrepreneurs.</p></div>
-              <span class="open-link">Open guide</span>
-            </div>
-          </a>
-
-          <a class="guide-card featured" href="https://weschennuo-cmd.github.io/lifestyle-home-design/" target="_blank" rel="noopener">
-            <img src="guide-lifestyle-home-design.webp" alt="">
-            <div class="guide-body">
-              <div><h3>Lifestyle, Home and Design</h3><p class="claim">Best fit for home decor creators, interior designers, cozy living influencers, lifestyle creators, and gift recommendation creators.</p></div>
-              <span class="open-link">Open guide</span>
-            </div>
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <section id="checklist" class="light section-pad">
-      <div class="shell">
-        <div class="section-head reveal">
-          <div class="label">Creator Success Checklist</div>
-          <h2 class="section-title">Before it goes live, make it clear, useful, and approved.</h2>
-          <p class="lead">These guidelines help you create authentic, engaging content while keeping the collaboration smooth. Create in your own style while keeping these recommendations in mind.</p>
-        </div>
-
-        <div class="check-grid reveal">
-          <article class="panel">
-            <h3>Filming Guidelines</h3>
-            <p><strong>How we would love the product to appear on camera.</strong></p>
-            <ul class="checklist-list">
-              <li>Film in 1080P or higher</li>
-              <li>Show the product within the first 10 seconds</li>
-              <li>Capture multiple projection discs when available</li>
-              <li>Include product close-ups, projection details, and full-room atmosphere shots</li>
-              <li>Show the projection both with and without people in the scene</li>
-              <li>Use real lifestyle moments that fit your niche and audience</li>
-              <li>Keep the projection clear and in focus</li>
-              <li>Use stable footage</li>
-              <li>Avoid using a logo-only cover image</li>
-            </ul>
-            <p style="margin-top: 22px;"><a class="button primary" href="https://drive.google.com/file/d/1MwdgIqu-xijGwYCNOjvJItxpuna9b3Am/view" target="_blank" rel="noopener">Product User Guide</a></p>
-          </article>
-
-          <article class="panel">
-            <h3>Content Guidelines</h3>
-            <p><strong>What we would love your audience to experience.</strong></p>
-            <ul class="checklist-list">
-              <li>Build the content around a clear point of view, not just product display</li>
-              <li>Connect POCOCO to a real audience need, mood, routine, or environment</li>
-              <li>Show how the projection changes the atmosphere before and after use</li>
-              <li>Let product benefits appear naturally through your story and experience</li>
-              <li>Match the scene, projection disc, and message to your audience</li>
-              <li>Bring the story back to your main theme before introducing a natural CTA</li>
-              <li>Keep the product visible for approximately 30%+ of the video</li>
+        <div class="check-grid">
+          <article class="panel must">
+            <h3>Must capture</h3>
+            <ul>
+              <li><strong>1080P or higher</strong>, stable and in focus</li>
+              <li>A clear <strong>before-and-after</strong> room change</li>
+              <li>Wide or medium shots with <strong>people inside the projection</strong></li>
+              <li>Close-ups of the <strong>product and projection details</strong></li>
+              <li><strong>Multiple projection discs</strong> when available</li>
             </ul>
           </article>
-
-          <article class="panel">
-            <h3>Creative Best Practices</h3>
-            <p><strong>Make the content feel human, not promotional.</strong></p>
-            <div class="dosdonts">
-              <div class="mini-panel good">
-                <h4>We would love to see</h4>
-                <ul>
-                  <li>People interacting with the projection</li>
-                  <li>A cozy, immersive atmosphere</li>
-                  <li>Natural storytelling in your own style</li>
-                  <li>Everyday moments where POCOCO fits naturally</li>
-                  <li>Authentic emotions and experiences</li>
-                </ul>
-              </div>
-              <div class="mini-panel avoid">
-                <h4>Please avoid</h4>
-                <ul>
-                  <li>Unboxing-focused videos</li>
-                  <li>Overly promotional language</li>
-                  <li>Showing only a small projection area</li>
-                  <li>Heavy filters or excessive visual effects</li>
-                  <li>Unrealistic product claims</li>
-                </ul>
-              </div>
-            </div>
-          </article>
-
-          <article class="panel">
-            <h3>Publishing Requirements</h3>
-            <p><strong>Before your content goes live, please remember to:</strong></p>
-            <ul class="checklist-list requirements">
-              <li>Publish only after receiving final approval</li>
-              <li>Include your affiliate link</li>
-              <li>Include your creator discount code</li>
-              <li>Include the required campaign hashtags</li>
-              <li>Tag the official POCOCO account(s)</li>
+          <article class="panel human">
+            <h3>Make it feel human</h3>
+            <ul>
+              <li>Open from a <strong>real need, mood, routine, or moment</strong></li>
+              <li>Show <strong>natural reactions, movement, and interaction</strong></li>
+              <li>Let <strong>benefits appear through the story</strong></li>
+              <li><strong>Slow the pacing</strong> after the projection turns on</li>
+              <li>Use a <strong>natural CTA</strong> connected to the story</li>
             </ul>
           </article>
-
-          <article class="good-to-know">
-            <h3>Good to Know</h3>
-            <p>Once your draft has been approved, we will <strong class="email-highlight">email you</strong> everything you need before publishing, including your <strong>affiliate link, creator discount code, campaign hashtags, official account tags, and final posting instructions.</strong></p>
+          <article class="panel publish">
+            <h3>Before you post</h3>
+            <ul>
+              <li>Publish only after <strong>final approval</strong></li>
+              <li>Follow the <strong>approved direction and essential edits</strong></li>
+              <li>Include your <strong>affiliate link and creator discount code</strong></li>
+              <li>Include the required <strong>campaign hashtags and official account tags</strong></li>
+              <li>Keep claims grounded in <strong>personal experience and environment</strong></li>
+              <li><strong>Avoid medical, sleep, hormone, or nervous-system promises</strong></li>
+            </ul>
           </article>
         </div>
+
+        <div class="avoid">
+          <strong>Please avoid</strong>
+          <p>Unboxing-led videos, product-only footage, logo-only covers, heavy filters, overly promotional language, small or blurry projection areas, and unrealistic product claims.</p>
+        </div>
+
+        <aside class="good-to-know">
+          <div class="money">%</div>
+          <div>
+            <h3>Affiliate &amp; good to know</h3>
+            <p>After final approval, we will email the remaining publishing materials, including your <strong>affiliate link, creator discount code, campaign hashtags, and account tags</strong>. Affiliate commission follows the agreed program terms and tracked approved sales. Need help setting up the product? Open the <a href="https://drive.google.com/file/d/1MwdgIqu-xijGwYCNOjvJItxpuna9b3Am/view" target="_blank" rel="noopener">Product User Guide</a>.</p>
+          </div>
+        </aside>
       </div>
     </section>
 
     <section class="closing">
-      <div class="shell reveal">
-        <h2>Thank You</h2>
-        <p>Thank you for taking the time to review this guide.</p>
-        <p>We value creativity, authenticity, and collaboration, and we are always happy to discuss ideas or provide feedback throughout the process.</p>
-        <p>If you have questions, content ideas, or would like to brainstorm concepts before filming, please do not hesitate to reach out.</p>
-        <p>We cannot wait to see your creativity come to life.</p>
+      <div class="shell">
+        <h2>Thank you.</h2>
+        <p>We value creativity, authenticity, and collaboration. If you would like to brainstorm before filming, please reach out—we would love to help shape the idea with you.</p>
+        <p>We cannot wait to see your universe come to life.</p>
       </div>
     </section>
   </main>
 
   <footer>
-    <div class="shell">POCOCO Creator Partnership Guide. All creator guide links and the Product User Guide open the original destinations from the source deck.</div>
+    <div class="shell">POCOCO Gifted Product &amp; Affiliate Creator Partnership Guide · Creator resources open in their original destinations.</div>
   </footer>
-
-  <script>
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) entry.target.classList.add('in-view');
-      });
-    }, { threshold: 0.12 });
-
-    document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
-  </script>
 </body>
 </html>
-
-
-
 
 
 
